@@ -13,6 +13,7 @@ const TARGETRATIO = 16.0/9.0
 @export var RToggle:bool = false
 @export var menuTransitions:bool = true
 @export var RobloxStuds:bool = false # should be a string later for more material if needed
+@export var is_server:bool = false
 
 signal DataLoaded
 signal CharacterAdded(Player)

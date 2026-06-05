@@ -76,11 +76,19 @@ func _file_dragged(files:PackedStringArray):
 
 func _on_play_pressed() -> void: # when you press play
 	if GameManager.currentLevel != "":
+		# GameManager.is_server = Input.is_key_pressed(KEY_SHIFT)
 		get_tree().change_scene_to_file("res://custom.tscn")
 		
 		if DiscordRPCManager != null:
 			DiscordRPCManager.playing(GameManager.currentLevel)
 
+func _on_play_server_pressed():
+	GameManager.is_server = true
+	_on_play_pressed()
+
+func _on_play_client_pressed():
+	GameManager.is_server = false
+	_on_play_pressed()
 
 func load_level(path): # loads level data and returns it
 	var file = FileAccess.open(path,FileAccess.READ)

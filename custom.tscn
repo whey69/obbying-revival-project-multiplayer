@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b35nds8m0c77l" path="res://assets/prefabs/UI/shiftlockIcon.tscn" id="2_o1hpr"]
 [ext_resource type="PackedScene" uid="uid://21fflrxp85y2" path="res://assets/prefabs/UI/Health.tscn" id="3_j68um"]
 [ext_resource type="PackedScene" uid="uid://bhgjl8nsom23c" path="res://assets/prefabs/UI/fps.tscn" id="4_wj2ro"]
+[ext_resource type="Script" uid="uid://hwdf5rx2j8ip" path="res://scripts/multiplayer.gd" id="9_o3jt7"]
 [ext_resource type="PackedScene" uid="uid://r7idkhhne3c0" path="res://assets/prefabs/UI/esc_menu.tscn" id="11_bdh7s"]
 [ext_resource type="PackedScene" uid="uid://fuehl670w3lw" path="res://assets/prefabs/UI/Timer.tscn" id="12_fgt82"]
 [ext_resource type="PackedScene" uid="uid://b8q02e5g57tx4" path="res://assets/character/player.tscn" id="13_ye4bg"]
@@ -52,6 +53,10 @@ offset_right = -22.0
 mouse_filter = 2
 
 [node name="Player" parent="." unique_id=1574667455 node_paths=PackedStringArray("shiftlockLogo", "timer", "HealthBar") instance=ExtResource("13_ye4bg")]
+unique_name_in_owner = true
 shiftlockLogo = NodePath("../ShiftlockIcon")
 timer = NodePath("../Timer")
 HealthBar = NodePath("../Health")
+
+[node name="Multiplayer" type="Node" parent="." unique_id=1698115738]
+script = ExtResource("9_o3jt7")
